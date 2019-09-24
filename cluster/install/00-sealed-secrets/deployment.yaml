@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sealed-secrets-controller
+  namespace: kube-system
+spec:
+  selector:
+    matchLabels:
+      app: sealed-secrets-controller
+  template:
+    metadata:
+      labels:
+        app: sealed-secrets-controller
+    spec:
+      containers:
+        - command:
+            - controller
+          image: quay.io/bitnami/sealed-secrets-controller:v0.7.0
+          resources:
+            requests:
+              cpu: 10m
+              memory: 50Mi
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 8080
+          name: sealed-secrets-controller
+          ports:
+            - containerPort: 8080
+              name: http
+          readinessProbe:
+            httpGet:
+              path: /healthz
+              port: 8080
+          securityContext:
+            readOnlyRootFilesystem: true
+            runAsNonRoot: true
+            runAsUser: 1001
+      serviceAccountName: sealed-secrets-controller
