@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ts-script-starter.iml" filepath="$PROJECT_DIR$/ts-script-starter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cluster-forge.iml" filepath="$PROJECT_DIR$/cluster-forge.iml" />
     </modules>
   </component>
 </project>

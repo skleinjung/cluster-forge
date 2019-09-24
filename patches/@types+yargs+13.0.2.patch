@@ -1,0 +1,35 @@
+diff --git a/node_modules/@types/yargs/index.d.ts b/node_modules/@types/yargs/index.d.ts
+index 8a69695..da561b2 100644
+--- a/node_modules/@types/yargs/index.d.ts
++++ b/node_modules/@types/yargs/index.d.ts
+@@ -426,8 +426,8 @@ declare namespace yargs {
+          * Allows you to configure a command's positional arguments with an API similar to `.option()`.
+          * `.positional()` should be called in a command's builder function, and is not available on the top-level yargs instance. If so, it will throw an error.
+          */
+-        positional<K extends keyof T, O extends PositionalOptions>(key: K, opt: O): Argv<Omit<T, K> & { [key in K]: InferredOptionType<O> }>;
+-        positional<K extends string, O extends PositionalOptions>(key: K, opt: O): Argv<T & { [key in K]: InferredOptionType<O> }>;
++        positional<K extends keyof T, O extends PositionalOptions>(key: K, opt: O): Argv<Omit<T, K> & { [key in K]: InferredPositionalOptionType<O> }>;
++        positional<K extends string, O extends PositionalOptions>(key: K, opt: O): Argv<T & { [key in K]: InferredPositionalOptionType<O> }>;
+ 
+         /** Should yargs provide suggestions regarding similar commands if no matching command is found? */
+         recommendCommands(): Argv<T>;
+@@ -700,7 +700,7 @@ declare namespace yargs {
+     /** Gives number[] if T is an array type, otherwise number. Preserves | undefined. */
+     type ToNumber<T> = (Exclude<T, undefined> extends any[] ? number[] : number) | Extract<T, undefined>;
+ 
+-    type InferredOptionType<O extends Options | PositionalOptions> =
++    type InferredOptionType<O extends Options> =
+         O extends { default: infer D } ? D :
+         O extends { type: "count" } ? number :
+         O extends { count: true } ? number :
+@@ -710,6 +710,10 @@ declare namespace yargs {
+         O extends { demandOption: string | true } ? RequiredOptionType<O> :
+         RequiredOptionType<O> | undefined;
+ 
++    type InferredPositionalOptionType<O extends PositionalOptions> =
++        O extends { default: infer D } ? D :
++        RequiredOptionType<O>;
++
+     type RequiredOptionType<O extends Options | PositionalOptions> =
+         O extends { type: "array", string: true } ? string[] :
+         O extends { type: "array", number: true } ? number[] :

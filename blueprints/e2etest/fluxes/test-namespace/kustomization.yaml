@@ -1,0 +1,8 @@
+namespace: test-namespace
+resources:
+  - namespace.yaml
+  - git-deploy-key.yaml
+bases:
+  - github.com/skleinjung/cluster-forge//kustomizations/bootstrap/flux?ref=master
+patchesStrategicMerge:
+  - flux-patch.yaml

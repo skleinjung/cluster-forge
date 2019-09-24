@@ -1,0 +1,10 @@
+namespace: flux-master
+bases:
+  - ../../base-flux/memcached/
+  - ../../base-flux/flux/
+resources:
+  - rbac.yaml
+  - psp.yaml
+  - secret.yaml
+patchesStrategicMerge:
+  - flux-patch.yaml

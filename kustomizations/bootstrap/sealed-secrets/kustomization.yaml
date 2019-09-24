@@ -1,0 +1,6 @@
+namespace: kube-system
+resources:
+  - sealed-secret-crd.yaml
+  - rbac.yaml
+  - deployment.yaml
+  - service.yaml
