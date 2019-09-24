@@ -25,15 +25,22 @@
     ]
   },
   "dependencies": {
+    "@types/app-root-path": "^1.2.4",
     "@types/chalk": "^2.2.0",
     "@types/shelljs": "^0.8.5",
+    "@types/sshpk": "^1.10.4",
+    "app-root-path": "^2.2.1",
     "chalk": "^2.4.2",
+    "figlet": "^1.2.4",
     "keypair": "^1.0.1",
     "lodash": "^4.17.15",
     "shelljs": "^0.8.3",
+    "simple-git": "^1.126.0",
     "ssh-keygen": "^0.4.2",
+    "sshpk": "^1.16.1",
     "ts-node": "^8.4.1",
     "typescript": "^3.6.3",
+    "unique-filename": "^1.1.1",
     "yargs": "^14.0.0"
   },
   "devDependencies": {
@@ -46,6 +53,7 @@
     "eslint-plugin-flowtype": "^4.3.0",
     "eslint-plugin-import": "^2.18.2",
     "husky": "^3.0.5",
+    "hygen": "^4.0.9",
     "lint-staged": "^9.3.0",
     "patch-package": "^6.2.0",
     "postinstall-postinstall": "^2.0.0"

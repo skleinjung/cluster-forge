@@ -1,0 +1,21 @@
+commonLabels:
+  app.kubernetes.io/name: flux
+  app.kubernetes.io/version: 1.14.2
+  app.kubernetes.io/component: gitops
+  app.kubernetes.io/managed-by: cforge
+resources:
+  - account.yaml
+  - rbac.yaml
+  - secret.yaml
+  - deployment.yaml
+images:
+  - name: weaveworks/flux
+    newTag: 1.14.2
+patchesJson6902:
+  - target:
+      group: rbac.authorization.k8s.io
+      version: v1
+      kind: RoleBinding
+      name: flux
+    path: patches/add-namespace-to-subject.yaml
+

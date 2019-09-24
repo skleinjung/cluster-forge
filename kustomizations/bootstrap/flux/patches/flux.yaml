@@ -1,0 +1,12 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flux
+spec:
+  selector:
+    matchLabels:
+      app: flux-bootstrap
+  template:
+    metadata:
+      labels:
+        app: flux-bootstrap

@@ -1,0 +1,12 @@
+commonLabels:
+  app.kubernetes.io/name: memcached
+  app.kubernetes.io/instance: memcached-flux
+  app.kubernetes.io/version: 1.5.15
+  app.kubernetes.io/component: cache
+  app.kubernetes.io/managed-by: cforge
+resources:
+  - deployment.yaml
+  - service.yaml
+images:
+  - name: memcached
+    newTag: 1.5.15

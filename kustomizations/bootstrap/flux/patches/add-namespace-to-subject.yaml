@@ -1,0 +1,3 @@
+- op: copy
+  from: /metadata/namespace
+  path: /subjects/0/namespace

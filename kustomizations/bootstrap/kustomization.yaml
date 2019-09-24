@@ -1,0 +1,4 @@
+bases:
+  - sealed-secrets
+  - memcached
+  - flux
