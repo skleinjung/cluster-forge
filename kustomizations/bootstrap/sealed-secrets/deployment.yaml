@@ -23,7 +23,7 @@ spec:
       containers:
         - command:
             - controller
-          image: quay.io/bitnami/sealed-secrets-controller:v0.9.0
+          image: quay.io/bitnami/sealed-secrets-controller:v0.9.4
           imagePullPolicy: Always
           livenessProbe:
             httpGet:

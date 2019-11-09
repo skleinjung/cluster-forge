@@ -1,6 +1,6 @@
 commonLabels:
   app.kubernetes.io/name: sealed-secrets
-  app.kubernetes.io/version: 0.9.0
+  app.kubernetes.io/version: 0.9.4
   app.kubernetes.io/component: gitops
   app.kubernetes.io/managed-by: cforge
 resources:
@@ -10,4 +10,4 @@ resources:
   - service.yaml
 images:
   - name: quay.io/bitnami/sealed-secrets-controller
-    newTag: v0.9.0
+    newTag: v0.9.4
