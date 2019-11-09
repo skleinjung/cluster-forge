@@ -39,8 +39,8 @@ spec:
               mountPath: /var/fluxd/keygen
           args:
             - --manifest-generation=true
-            - --memcached-hostname=flux-memcached.bootstrap
-            - --memcached-service=flux-memcached
+            - --memcached-hostname=flux-memcached.bootstrap.svc.cluster.local
+            - --memcached-service=
             - --ssh-keygen-dir=/var/fluxd/keygen
             - --git-timeout=20s
             - --git-set-author=false
