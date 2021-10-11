@@ -32,7 +32,7 @@
     "app-root-path": "^2.2.1",
     "chalk": "^2.4.2",
     "figlet": "^1.2.4",
-    "keypair": "^1.0.1",
+    "keypair": "^1.0.4",
     "lodash": "^4.17.15",
     "shelljs": "^0.8.3",
     "simple-git": "^1.126.0",
